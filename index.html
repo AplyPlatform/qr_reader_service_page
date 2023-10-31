@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2VLKGSW0V"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-X2VLKGSW0V');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="description" content="간편한 송금 지원 서비스">
+    <meta name="author" content="APLY Inc.">
+    <meta name="keywords" content="송금, QR, 플리마켓, 대학, 축제, 팝업, 스토어, 이체, 안전, 보호, 예방, advanced, platform, mobile, software, service, emotion, emotional, 증강현실, AR, AI, 감성, 서비스, 소프트웨어, sw, vision, anomaly, detection, machine, ai, bigdata">
+    <meta name="description" content="AQR - 간편한 송금 지원 서비스">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="AQR - 간편한 송금 지원 서비스">
+    <meta name="twitter:title" content="AQR - 간편한 송금 지원 서비스">
+    <meta name="twitter:image" content="assets/images/aqr_og_image.png">
+    <meta name="theme-color" content="#000000">
+
+    <meta property="og:title" content="QR코드 리더 - AQR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://qr.aq.gy" />
+    <meta property="og:image" content="https://aplx.link/qr/assets/images/android-chrome-256x256.png" />
+    <meta property="og:description" content="QR코드 리더" />
+    
+    <title>QR코드 리더 - AQR</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/images/favicon-16x16.png" sizes="16x16">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">        
+    <script src="assets/lib/html5-qrcode.min.js"></script>
+    <script src="assets/app.js"></script>
+</head>
+<body>
+    <div id="qr-reader"></div>
+    <div class="center_scan_text" id="center_scan_text"><center><font size="4" color="white"><B>QR 코드를 비추세요</B></font></center></div>
+    
+    <div id="wait-screen" style="width:100%; height:400px; display:none; z-index:99;">
+        <table border="0" width="100%" height="400px" align="center" bgcolor="#000">
+            <tr><td style="text-align:center;" valign="center">                
+                <img src="assets/images/success.gif" width="100px" height="100px" border="0">
+                <font size="3" color="#fff">
+                <br>
+                <b>QR코드가 인식 되었습니다!</b>
+                <br>
+            </td></tr>
+        </table>
+    </div>
+
+    <div id="aboutArea">
+        <a href="https://aq.gy" target="_blank" style="text-decoration: none;"><img src="assets/images/logo-aqr4.png" width="40px" border="0"></a>    
+    </div>
+</body>
+</html>
