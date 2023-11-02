@@ -9,12 +9,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // html elements    
     const waitScreen = document.getElementById('wait-screen');            
     const qrArea = document.getElementById('qr-reader');
-    const centerScanText = document.getElementById('center_scan_text');
-    
-    function vibrate() {
-        const canVibrate = window.navigator.vibrate;
-        if (canVibrate) window.navigator.vibrate([10,10,5,5]);
-    }
+    const centerScanText = document.getElementById('center_scan_text');        
     
     let lastResult = "";
     function qrCodeSuccessCallback(decodedText, decodedResult) {
@@ -44,3 +39,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
     html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 });
+
+function vibrate() {
+    const canVibrate = window.navigator.vibrate;
+    if (canVibrate) window.navigator.vibrate([10,10,5,5]);
+}
