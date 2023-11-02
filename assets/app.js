@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     
     var html5QrCode = new Html5Qrcode("qr-reader");
     if (html5QrCode == null) {
-        alert('카메라를 지원하지 않는 환경이거나 카메라 사용권한을 취소하셨습니다. 이전 화면으로 돌아갑니다.\n\n다시 사용하시려면 브라우저의 새탭에서 접속해주세요.');
+        alert('카메라를 지원하지 않는 환경이거나 카메라 사용권한을 취소하셨습니다. 이전 화면으로 돌아갑니다.\n\n다시 사용하시려면 브라우저의 새탭에서 접속 해주세요.');
         history.back();
         return;
     }
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', async function () {
         .then((ignore) => {
         })
         .catch((err) => {
-            alert('카메라를 지원하지 않는 환경이거나 카메라 사용권한을 취소하셨습니다. 이전 화면으로 돌아갑니다.\n\n다시 사용하시려면 브라우저의 새탭에서 접속해주세요.');
+            alert('카메라를 지원하지 않는 환경이거나 카메라 사용권한을 취소하셨습니다. 이전 화면으로 돌아갑니다.\n\n다시 사용하시려면 브라우저의 새탭에서 접속 해주세요.');
             history.back();
         });    
 });
