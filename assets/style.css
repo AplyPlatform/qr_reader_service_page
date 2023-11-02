@@ -41,12 +41,6 @@ body {
     display: none;
 }
 
-#loading {
-    display: none;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-}
 
 #flipCamera, #aboutButton {
     position: absolute;
@@ -82,14 +76,13 @@ body {
 
 #aboutArea {
     text-decoration: none;
-    position: fixed;
+    position: absolute;
     background-color: rgba(0,0,0,0); color: white;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     width: 100vw;
-    text-align: center;
-    z-index: 11;
-    height: 100px;
+    text-align: center;    
+    height: 60px;
     padding-top: 5px;
     cursor: pointer;
 }
@@ -101,7 +94,7 @@ body {
 
 .center_scan_text {
     text-decoration: none;
-    position: fixed;          
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 80px;            
