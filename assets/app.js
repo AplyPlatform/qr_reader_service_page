@@ -5,8 +5,8 @@ window.addEventListener('DOMContentLoaded', async function () {
     if (document.referrer != "") {
         $("#back_button_area").show();
         $("#back_button_area").click(function() {
-            GA_EVENT("back_button", "click", "service");
             vibrate();
+            GA_EVENT("back_button", "click", "service");            
             history.back();
         });
     }
