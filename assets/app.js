@@ -1,3 +1,5 @@
+let lastResult = "";
+
 window.addEventListener('DOMContentLoaded', async function () {
     $("#wait_text").hide();
     $("#center_scan_text").show();
@@ -11,11 +13,10 @@ window.addEventListener('DOMContentLoaded', async function () {
         });
     }
     
+    lastResult = "";
     const waitScreen = document.getElementById('wait-screen');
     const qrArea = document.getElementById('qr-reader');
     const centerScanText = document.getElementById('center_scan_text');        
-    
-    let lastResult = "";
     function qrCodeSuccessCallback(decodedText, decodedResult) {
         if (decodedText !== lastResult) {
             lastResult = decodedText;
@@ -24,17 +25,11 @@ window.addEventListener('DOMContentLoaded', async function () {
             centerScanText.style.display = "none";            
 
             try {
-                GA_EVENT("qr_read_" + decodedText, decodedText, "service");
+                GA_EVENT("qr_read_success", decodedText, "service");
                 setTimeout(() => {location.href = decodedText;}, 2000);
             }
             catch (e) {
-
-            }
-
-            try {                                
-                vibrate(); // vibration is not supported on Edge, IE, Opera and Safari
-            } catch (e) {
-
+                location.href = decodedText;
             }
         }
     }
