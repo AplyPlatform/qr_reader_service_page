@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', async function () {
             centerScanText.style.display = "none";            
 
             try {
-                GA_EVENT("qr_read_success", decodedText, "service");
+                GA_EVENT("qr_read_success", "service", decodedText);
                 setTimeout(() => {location.href = decodedText;}, 2000);
             }
             catch (e) {
