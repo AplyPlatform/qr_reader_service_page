@@ -37,9 +37,9 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-let s_version = "v20231101_1";
+let s_version = "v20240529_01";
 var precacheConfig = [
-  ["assets/app.js","cf117381ba2504b1bffa1231e86cdc2d"],
+  ["assets/app.js?v=20240529_01","cf117381ba2504b1bffa1231e86cdc2d"],
   ["assets/images/logo_aplx.png","1687265c6a3111eda1eb0242ac120002"],
   ["assets/images/success.gif","33c83d326a3111eda1eb0242ac120002"],
   ["assets/images/android-chrome-192x192.png","6c04c739c9947589f2f9149f31acf7c8"],
