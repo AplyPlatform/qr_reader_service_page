@@ -4,14 +4,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     $("#wait_text").hide();
     $("#center_scan_text").show();
 
-    if (document.referrer != "") {
-        $("#back_button_area").show();
-        $("#back_button_area").click(function() {
-            vibrate();
-            GA_EVENT("back_button", "click", "service");            
-            history.back();
-        });
-    }
+    if (document.referrer != "") $("#back_button_area").show();    
     
     lastResult = "";
     const waitScreen = document.getElementById('wait-screen');
