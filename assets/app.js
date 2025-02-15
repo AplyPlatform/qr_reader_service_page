@@ -41,6 +41,7 @@ window.addEventListener('DOMContentLoaded', async function () {
             let cameraId = devices[devices.length-1].id;                            
             html5QrCode.start(cameraId, config, qrCodeSuccessCallback)
             .then((ignore) => {
+                $("#loader_area").hide();
             })
             .catch((err) => {
                 GA_EVENT("html5QrCode_error_2", "service", "service");
