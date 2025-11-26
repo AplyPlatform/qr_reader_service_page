@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     if (document.referrer != "") $("#back_button_area").show();
 
     document.getElementById('back_button').onclick = function() {
-        location.href = document.referrer;
+        history.back();
     };
     
     lastResult = "";
