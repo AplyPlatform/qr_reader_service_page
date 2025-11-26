@@ -4,7 +4,11 @@ window.addEventListener('DOMContentLoaded', async function () {
     $("#wait_text").hide();
     $("#center_scan_text").show();
 
-    if (document.referrer != "") $("#back_button_area").show();    
+    if (document.referrer != "") $("#back_button_area").show();
+
+    document.getElementById('back_button').onclick = function() {
+        location.href = document.referrer;
+    };
     
     lastResult = "";
     const waitScreen = document.getElementById('wait-screen');
