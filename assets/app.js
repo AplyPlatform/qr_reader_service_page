@@ -41,13 +41,26 @@ window.addEventListener('DOMContentLoaded', async function () {
     const config = { fps: 15, qrbox: { width: 200, height: 200 } };
 
     Html5Qrcode.getCameras().then(devices => {
-        if (devices && devices.length) {            
-            let cameraId = devices[devices.length-1].id;                            
-            html5QrCode.start(cameraId, config, qrCodeSuccessCallback)
+        if (devices && devices.length) {
+            html5QrCode.start({ facingMode: { exact: "environment"} }, config, qrCodeSuccessCallback)
             .then((ignore) => {
                 $("#loader_area").hide();
             })
             .catch((err) => {
+                if (err.includes("OverconstrainedError")) { // 후면 카메라가 없음
+                    let cameraId = devices[devices.length-1].id;
+                    html5QrCode.start(cameraId, config, qrCodeSuccessCallback)
+                    .then((ignore) => {
+                        $("#loader_area").hide();
+                    })
+                    .catch((err) => {
+                        GA_EVENT("html5QrCode_error_3", "service", "service");
+                        alert('카메라를 지원하지 않는 환경이거나 카메라 사용권한을 취소하셨습니다. 이전 화면으로 돌아갑니다.\n\n다시 사용하시려면 브라우저의 새 탭에서 접속해 주세요.');            
+                        history.back();
+                    });
+                    return;
+                }
+
                 GA_EVENT("html5QrCode_error_2", "service", "service");
                 alert('카메라를 지원하지 않는 환경이거나 카메라 사용권한을 취소하셨습니다. 이전 화면으로 돌아갑니다.\n\n다시 사용하시려면 브라우저의 새 탭에서 접속해 주세요.');            
                 history.back();
