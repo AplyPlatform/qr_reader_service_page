@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     Html5Qrcode.getCameras().then(devices => {
         if (devices && devices.length) {
-            html5QrCode.start({ facingMode: { exact: "environment"} }, config, qrCodeSuccessCallback)
+            html5QrCode.start(evPickBackCamera(devices), config, qrCodeSuccessCallback)
             .then((ignore) => {
                 $("#loader_area").hide();
             })
@@ -74,6 +74,20 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     
 });
+
+function evPickBackCamera(devices) {
+    const BACK = ["back", "rear", "environment", "후면"];
+
+    for (let i = (devices.length - 1); i >= 0; i--) {
+        let label = String(devices[i].label == null ? "" : devices[i].label).toLowerCase();
+
+        for (let k = 0; k < BACK.length; k++) {
+            if (label.indexOf(BACK[k]) >= 0) return { deviceId: { exact: devices[i].id } };
+        }
+    }
+
+    return { facingMode: { exact: "environment" } };
+}
 
 function vibrate() {
     const canVibrate = window.navigator.vibrate;
